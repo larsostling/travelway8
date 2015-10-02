@@ -50,7 +50,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
     return $http({
       method: 'POST',
-      url: 'http://52.29.24.118/user/',
+      url: 'http://52.29.24.118/api/user/',
       data: user
     }).then(function successCallback(response) {
       console.log("Success");

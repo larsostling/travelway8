@@ -16,7 +16,7 @@ angular.module('myApp.view2', ['ngRoute'])
   });
 
   function getUsers(){
-    return $http.get('http://52.29.24.118/user').then(function(response){
+    return $http.get('http://52.29.24.118/api/user').then(function(response){
       return response.data;
       console.log("Load users")
     });
