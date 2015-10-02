@@ -121,3 +121,125 @@ table {
 thead {
     background-color: #d3d3d3;
 }
+
+
+/* Mixins */
+/* Bubbles */
+.bubble-right {
+    max-width: 15%;
+    min-width: 15%;
+    background-color: #dddddd;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    display: inline-block;
+    margin-bottom: 2em;
+    padding: 1em;
+    position: relative;
+}
+.bubble-right:after {
+    border-style: solid;
+    content: "";
+    position: absolute;
+}
+.bubble-right:after {
+    border-color: transparent #dddddd;
+    border-width: 0.75em 1em 0.75em 0;
+    left: -0.96em;
+    /* 1em - prevent distance*/
+    top: 25%;
+}
+.bubble-left {
+    max-width: 15%;
+    min-width: 15%;
+    background-color: #dddddd;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    display: inline-block;
+    margin-bottom: 2em;
+    padding: 1em;
+    position: relative;
+}
+.bubble-left:after {
+    border-style: solid;
+    content: "";
+    position: absolute;
+}
+.bubble-left:after {
+    border-color: transparent #dddddd;
+    border-width: 0.75em 0 0.75em 1em;
+    right: -0.96em;
+    /* 1em - prevent distance*/
+    top: 25%;
+}
+.bubble-top {
+    background-color: #dddddd;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    display: inline-block;
+    margin-bottom: 2em;
+    padding: 1em;
+    position: relative;
+}
+.bubble-top:after {
+    border-style: solid;
+    content: "";
+    position: absolute;
+}
+.bubble-top:after {
+    border-color: #dddddd transparent;
+    border-width: 0 0.75em 1em;
+    left: 25%;
+    top: -0.96em;
+    /* 1em - prevent distance*/
+}
+.bubble-bottom {
+    background-color: #dddddd;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    display: inline-block;
+    margin-bottom: 2em;
+    padding: 1em;
+    position: relative;
+}
+.bubble-bottom:after {
+    border-style: solid;
+    content: "";
+    position: absolute;
+}
+.bubble-bottom:after {
+    border-color: #dddddd transparent;
+    border-width: 1em 0.75em 0;
+    bottom: -0.96em;
+    /* 1em - prevent distance*/
+    left: 25%;
+}
+
+.table {
+    width: 80%;
+    max-width: 80%;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.starter-template {
+    height: 1000px;
+    width: 80%;
+    float: left;
+}
+
+.sidebar form {
+    max-width: 15%;
+    min-width: 15%;
+    float: left;
+    position: relative;
+    left: -30px;
+}
+
+.sidebar {
+    margin-top: 100px;
+
+}
