@@ -1,8 +1,11 @@
 package com.jayway.travelway8.backend.model;
 
+import org.apache.commons.lang3.tuple.Pair;
+
 import java.time.Duration;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by erikchrissopoulos on 02/10/15.
@@ -10,11 +13,13 @@ import java.util.List;
 public interface Trip {
     String getName();
 
-    public List<User> getTravelers();
+    public Map<Travel,User> getTravelers();
 
-    public void addTraveler(User user);
+    public List<User> getParticipants();
 
-    public void removeTraveler(User user);
+    public void addParticipant(User user);
+
+    public void removeParticipant(User user);
 
     public void addEvent(Event event);
 
@@ -27,5 +32,15 @@ public interface Trip {
     public Date getEndDate();
 
     public void setEndDate(Date date);
+
+    Location getLocation();
+
+    void setLocation(Location location);
+
+    void addTravel(Travel travel);
+
+    void setUserTravel(User user, Travel travel);
+
+
 
 }

@@ -12,4 +12,8 @@ public interface Event {
     void addParticipant(User user);
 
     List<User> getParticipants();
+
+    Location getLocation();
+
+    void setLocation(Location location);
 }

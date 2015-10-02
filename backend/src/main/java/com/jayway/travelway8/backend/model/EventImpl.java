@@ -12,6 +12,7 @@ import java.util.List;
 public class EventImpl implements Event {
     private String name="";
     private final List<User> participants=new ArrayList<>();
+    private Location location;
 
     public EventImpl(String name){
         Validate.isTrue(StringUtils.isNotEmpty(name));
@@ -33,6 +34,16 @@ public class EventImpl implements Event {
     @Override
     public List<User> getParticipants(){
         return participants;
+    }
+
+    @Override
+    public Location getLocation() {
+        return location;
+    }
+
+    @Override
+    public void setLocation(Location location) {
+       Validate.notNull(location);
     }
 
 }

@@ -3,16 +3,22 @@ package com.jayway.travelway8.backend.model;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by erikchrissopoulos on 02/10/15.
  */
 public class TripIml implements Trip {
-    private final List<User> travelers=new ArrayList<>();
+    private final List<User> participants =new ArrayList<>();
+    private final List<Travel> travels=new ArrayList<>();
+    private final Map<Travel,User> travelers=new HashMap<>();
+
     private String name="";
+
+    private Date startDate;
+    private Date endDate;
+
+    private Location location;
 
     private final List<Event> events=new ArrayList<>();
 
@@ -27,20 +33,25 @@ public class TripIml implements Trip {
     }
 
     @Override
-    public List<User> getTravelers() {
+    public Map<Travel,User> getTravelers() {
         return travelers;
     }
 
     @Override
-    public void addTraveler(User user) {
-        Validate.notNull(user);
-        travelers.add(user);
+    public List<User> getParticipants() {
+        return participants;
     }
 
     @Override
-    public void removeTraveler(User user) {
+    public void addParticipant(User user) {
         Validate.notNull(user);
-        travelers.remove(user);
+        participants.add(user);
+    }
+
+    @Override
+    public void removeParticipant(User user) {
+        Validate.notNull(user);
+        participants.remove(user);
     }
 
     @Override
@@ -56,21 +67,57 @@ public class TripIml implements Trip {
 
     @Override
     public Date getStartDate() {
-        return null;
+        return startDate;
     }
 
     @Override
     public void setStartDate(Date date) {
-
+        Validate.notNull(date);
+        startDate=date;
     }
 
     @Override
     public Date getEndDate() {
-        return null;
+        return endDate;
     }
 
     @Override
     public void setEndDate(Date date) {
+        Validate.notNull(date);
+        endDate=date;
+
+    }
+
+    @Override
+    public Location getLocation() {
+        return location;
+    }
+
+    @Override
+    public void setLocation(Location location) {
+        Validate.notNull(location);
+        this.location=location;
+    }
+
+    @Override
+    public void addTravel(Travel travel) {
+        Validate.notNull(travel);
+        travels.add(travel);
+
+
+    }
+
+    @Override
+    public void setUserTravel(User user, Travel travel) {
+        Validate.notNull(user);
+        Validate.notNull(travel);
+        if(!travels.contains(travel)){
+            travels.add(travel);
+        }
+        if(!participants.contains(user)){
+            participants.add(user);
+        }
+        travelers.put(travel,user);
 
     }
 }
