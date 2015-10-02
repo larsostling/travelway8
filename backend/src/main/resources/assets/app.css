@@ -1,0 +1,96 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+/* form css stylesheet */
+h1 {
+  font-size: 24px;
+  color: white;
+  text-align:center;
+  padding: 20px;
+}
+.form-container {
+  width: 320px;
+  background-color: lightgray;
+  opacity:0.9;
+  color: black;
+
+}
+.inner-form-container {
+  width:712px;
+  height:auto;
+  margin: 0 auto;
+  background-color: lightgray;
+  opacity:0.9;
+}
+.inner-form-container > h4 {
+ margin-left:15px;
+  padding-bottom:10px;
+  padding-top:10px;
+
+}
+form > input {
+  margin: 5px;
+  margin-left: 15px;
+  border-radius:3px;
+  border:none;
+  width: 300px;
+}
+form > span {
+  margin-left: 15px;
+}
+.support-bubble {
+  position:absolute;
+  background-image: url(https://dl.dropboxusercontent.com/u/552918/support-bubble.png);
+  background-size:248.5px 183px;
+  background-repeat:no-repeat;
+  width:248.5px;
+  height:183px;
+  left:700px;
+  top:200px;
+  opacity:1;
+
+}
+.support-bubble > h4 {
+  padding-top:15px;
+  padding-left:20px;
+}
+.support-bubble > div {
+  padding-top:0px;
+  padding-left: 20px;
+}
+body {
+  background-image: url(https://dl.dropboxusercontent.com/u/552918/toledo.jpg);
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+.send {
+  background-color: gray;
+  color:white;
+}

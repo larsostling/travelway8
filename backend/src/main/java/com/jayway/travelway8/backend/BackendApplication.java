@@ -5,6 +5,7 @@ import com.jayway.travelway8.backend.db.InMemoryUserRepository;
 import com.jayway.travelway8.backend.resources.TripResource;
 import com.jayway.travelway8.backend.resources.UserResource;
 import io.dropwizard.Application;
+import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
@@ -21,7 +22,7 @@ public class BackendApplication extends Application<BackendConfiguration> {
 
     @Override
     public void initialize(final Bootstrap<BackendConfiguration> bootstrap) {
-        // TODO: application initialization
+        bootstrap.addBundle(new AssetsBundle("/assets", "/", "index.html", "assets"));
     }
 
     @Override

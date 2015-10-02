@@ -1,0 +1,31 @@
+
+<div class="background">
+    <h1>You are almost done, enter your details below to signup for the Trip</h1>
+    <div class="inner-form-container">
+        <h4>Passenger information</h4>
+
+        <div class="form-container">
+
+        {{ passportName }}
+
+            <form ng-submit="submit()">
+                <span>Name in passport</span>
+                <input class="name" ng-model="passportName" type="text" placeholder=""/>
+                <span>Passport#</span>
+                <input class="passportno" ng-model="passportNr" type="text" placeholder=""/>
+                <span>Passport expire date</span>
+                <input class="validto" ng-model="validToDate" type="text" placeholder=""/>
+                <span>Mobile</span>
+                <input class="mobile" ng-model="phone" type="phone" placeholder=""/>
+                <span>Email</span>
+                <input class="email" ng-model="email" type="email" placeholder=""/>
+                <span>Date of birth</span>
+                <input class="socialSecurityrr" ng-model="socialSecurityNr" type="text" placeholder=""/>
+                <span>Country</span>
+                <input class="citisenship" ng-model="citizenship" type="text" placeholder=""/>
+                <input type="submit" class="send" value="Send"/>
+            </form>
+            <div>
+            </div>
+            <div class="support-bubble"><h4>Support</h4><div>Useful help and  information from Travelway...</div></div>
+        </div>
