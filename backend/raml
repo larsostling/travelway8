@@ -1,0 +1,41 @@
+#%RAML 0.8
+
+title: travelway8 backend api
+baseUri: http://backend-larsostling.boxfuse.io/
+/user:
+  is: [ secured ]
+  get:
+    description: |
+        this method returns all participants
+  post:
+    queryParameters:
+          passportName:
+            description: Participants name as shown in passport
+          passportNr:
+          validToDate:
+            description: Passport valid to date
+          phone:
+          email
+          citizenship:
+          socialSecurityNr:
+
+
+/trip:
+  is: [ secured ]
+  get:
+    description: |
+        this method returns all trips
+  post:
+    queryParameters:
+          participants:
+            description: All participants
+          travelers:
+            description: All ways to travel together with the participants traveling in each way
+          name:
+            description: name of this trip
+          startDate:
+          endDate
+          events:
+            description: Planned events during this trip
+          destination:
+            description: Destination for this trip
