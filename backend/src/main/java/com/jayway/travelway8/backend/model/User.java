@@ -103,8 +103,7 @@ public class User {
                 StringUtils.isEmpty(phone) ||
                 StringUtils.isEmpty(citizenship) ||
                 StringUtils.isEmpty(socialSecurityNr) ||
-                validToDate==null ||
-                validToDate.before(new Date())) {
+                validToDate==null) {
             return false;
         }
         return true;
