@@ -1,5 +1,8 @@
 package com.jayway.travelway8.backend.model;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Validate;
+
 import java.util.Date;
 
 public class UserImpl implements User{
@@ -15,15 +18,9 @@ public class UserImpl implements User{
         return passportNr;
     }
 
-    public UserImpl(String passportName, String passportNr, Date validToDate, String phone, String email,
-            String citizenship, String socialSecurityNr) {
-        this.passportName = passportName;
-        this.passportNr = passportNr;
-        this.validToDate = validToDate;
-        this.phone = phone;
-        this.email = email;
-        this.citizenship = citizenship;
-        this.socialSecurityNr = socialSecurityNr;
+    public UserImpl(String email){
+        Validate.isTrue(StringUtils.isNotEmpty(email));
+        this.email=email;
     }
 
 

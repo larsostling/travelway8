@@ -7,6 +7,22 @@ import java.util.Date;
  */
 public interface Travel {
 
+    Location getDepartureLocation();
+
+    Location getReturnLocation();
+
+    void setReturnLocation(Location location);
+
+    String getData();
+
+    void setData(String data);
+
     Date getDepartureDate();
-    void setDepartureDate();
+    void setDepartureDate(Date date);
+
+    Date getReturnDate();
+    void setReturnDate(Date date);
+
+    void setDepartureLocation(Location location);
+
 }
