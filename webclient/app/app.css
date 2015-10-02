@@ -83,6 +83,7 @@ form > span {
 .support-bubble.large {
     position: initial;
     display:block;
+    float: inherit;
     background-image: url(https://dl.dropboxusercontent.com/u/552918/support-bubble.png);
     background-size:339px 250px;
     background-repeat:no-repeat;
