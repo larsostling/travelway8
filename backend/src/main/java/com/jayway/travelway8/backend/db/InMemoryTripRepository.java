@@ -1,7 +1,6 @@
 package com.jayway.travelway8.backend.db;
 
 import com.jayway.travelway8.backend.model.Trip;
-import com.jayway.travelway8.backend.model.TripImpl;
 import org.jvnet.hk2.annotations.Service;
 
 import java.util.Collection;
@@ -15,8 +14,8 @@ public class InMemoryTripRepository implements TripRepository {
 
     public InMemoryTripRepository() {
         // Add dummy data
-        addTrip(new TripImpl("Toledo"));
-        addTrip(new TripImpl("Barcelona"));
+        addTrip(new Trip("Toledo"));
+        addTrip(new Trip("Barcelona"));
     }
 
     @Override
