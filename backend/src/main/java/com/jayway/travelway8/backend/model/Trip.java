@@ -6,6 +6,8 @@ import java.util.List;
  * Created by erikchrissopoulos on 02/10/15.
  */
 public interface Trip {
+    String getName();
+
     public List<User> getTravelers();
 
     public void addTraveler(User user);
