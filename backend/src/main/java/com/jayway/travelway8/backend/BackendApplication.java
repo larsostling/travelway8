@@ -1,5 +1,8 @@
 package com.jayway.travelway8.backend;
 
+import com.jayway.travelway8.backend.db.InMemoryTripRepository;
+import com.jayway.travelway8.backend.db.InMemoryUserRepository;
+import com.jayway.travelway8.backend.resources.TripResource;
 import com.jayway.travelway8.backend.resources.UserResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
@@ -24,6 +27,7 @@ public class BackendApplication extends Application<BackendConfiguration> {
     @Override
     public void run(final BackendConfiguration configuration,
                     final Environment environment) {
-        environment.jersey().register(new UserResource());
+        environment.jersey().register(new UserResource(new InMemoryUserRepository()));
+        environment.jersey().register(new TripResource(new InMemoryTripRepository()));
     }
 }
