@@ -28,3 +28,26 @@
   content: "";
   padding: 0;
 }
+
+/* form css stylesheet */
+
+h1 {
+  font-size: 24px;
+  color: white;
+  text-align:center;
+  padding: 20px;
+}
+.form-container {
+  width: 162px;
+  margin: 0 auto;
+  background-color: darkgrey;
+  opacity:0.9;
+}
+form > input {
+  margin: 5px
+}
+.background {
+  background-image: url(https://dl.dropboxusercontent.com/u/552918/toledo.jpg);
+  background-size:cover;
+  background-repeat:no-repeat;
+}
