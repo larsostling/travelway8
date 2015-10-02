@@ -37,11 +37,17 @@ h1 {
   text-align:center;
   padding: 20px;
 }
-.form-container {
-  width: 162px;
+.jocke-form {
+  background-image: url(https://dl.dropboxusercontent.com/u/552918/form.png);
+  background-size:contain;
+  background-repeat:no-repeat;
+  width: 720px;
+  height:512px;
   margin: 0 auto;
-  background-color: darkgrey;
-  opacity:0.9;
+}
+.form-container {
+  margin: 0 auto;
+  opacity:1;
 }
 form > input {
   margin: 5px
