@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * Created by erikchrissopoulos on 02/10/15.
  */
-public class TripIml implements Trip {
+public class TripImpl implements Trip {
     private final List<User> participants =new ArrayList<>();
     private final List<Travel> travels=new ArrayList<>();
     private final Map<Travel,User> travelers=new HashMap<>();
@@ -22,7 +22,7 @@ public class TripIml implements Trip {
 
     private final List<Event> events=new ArrayList<>();
 
-    public TripIml(String name) {
+    public TripImpl(String name) {
         Validate.isTrue(StringUtils.isNotEmpty(name));
         this.name=name;
     }
