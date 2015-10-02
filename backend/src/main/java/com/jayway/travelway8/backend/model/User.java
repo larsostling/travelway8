@@ -3,6 +3,7 @@ package com.jayway.travelway8.backend.model;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class User {
@@ -96,7 +97,17 @@ public class User {
 
 
     public boolean getIsComplete() {
-        return false;
+        if(StringUtils.isEmpty(email) ||
+                StringUtils.isEmpty(passportName) ||
+                StringUtils.isEmpty(passportNr) ||
+                StringUtils.isEmpty(phone) ||
+                StringUtils.isEmpty(citizenship) ||
+                StringUtils.isEmpty(socialSecurityNr) ||
+                validToDate==null ||
+                validToDate.before(new Date())) {
+            return false;
+        }
+        return true;
     }
 
     public void setPassportName(String passportName) {
