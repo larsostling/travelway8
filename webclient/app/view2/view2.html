@@ -36,3 +36,20 @@
 
     </div>
 
+    <div class="sidebar">
+      <div class="messages">
+       <ul>
+        <li ng-repeat="message in messages">
+          {{ message }}
+        </li>
+       <ul>
+       {{ messages }}
+      </div>
+      <form name="message" ng-submit="submitMessage()">
+        <input ng-model="editMessage" type="text" placeholder="Message..."/>
+        <input type="submit" class="send" value="Send"/>
+      </form>
+      {{ editMessage }}
+
+    </div>
+

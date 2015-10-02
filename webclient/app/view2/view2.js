@@ -15,6 +15,18 @@ angular.module('myApp.view2', ['ngRoute'])
     $scope.users = users;
   });
 
+  $scope.message = "";
+  $scope.messages = [
+    { username: "Fatima", time: new Date(), message: "Hej du" },
+  ]
+
+  $scope.submitMessage = function(){
+    $scope.messages.push({
+      username: "TODO", time: new Date(), message: $scope.editMessage
+    });
+    $scope.editMessage = "";
+  }
+
   function getUsers(){
     return $http.get('http://52.29.24.118/api/user').then(function(response){
       return response.data;
