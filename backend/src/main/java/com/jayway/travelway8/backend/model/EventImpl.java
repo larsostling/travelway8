@@ -10,7 +10,7 @@ import java.util.List;
  * Created by erikchrissopoulos on 02/10/15.
  */
 public class EventImpl implements Event {
-    private String name="";
+    private final String name;
     private final List<User> participants=new ArrayList<>();
     private Location location;
 
@@ -44,6 +44,8 @@ public class EventImpl implements Event {
     @Override
     public void setLocation(Location location) {
        Validate.notNull(location);
+        this.location=location;
+
     }
 
 }

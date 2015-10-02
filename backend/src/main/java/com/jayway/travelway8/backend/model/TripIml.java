@@ -13,7 +13,7 @@ public class TripIml implements Trip {
     private final List<Travel> travels=new ArrayList<>();
     private final Map<Travel,User> travelers=new HashMap<>();
 
-    private String name="";
+    private final String name;
 
     private Date startDate;
     private Date endDate;
@@ -89,12 +89,12 @@ public class TripIml implements Trip {
     }
 
     @Override
-    public Location getLocation() {
+    public Location getDestination() {
         return location;
     }
 
     @Override
-    public void setLocation(Location location) {
+    public void setDestination(Location location) {
         Validate.notNull(location);
         this.location=location;
     }

@@ -1,8 +1,5 @@
 package com.jayway.travelway8.backend.model;
 
-import org.apache.commons.lang3.tuple.Pair;
-
-import java.time.Duration;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -33,9 +30,9 @@ public interface Trip {
 
     public void setEndDate(Date date);
 
-    Location getLocation();
+    Location getDestination();
 
-    void setLocation(Location location);
+    void setDestination(Location location);
 
     void addTravel(Travel travel);
 
