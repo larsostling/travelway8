@@ -4,10 +4,7 @@ import com.codahale.metrics.annotation.Timed;
 import com.jayway.travelway8.backend.db.UserRepository;
 import com.jayway.travelway8.backend.model.User;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.Collection;
 
@@ -25,7 +22,7 @@ public class UserResource {
     @Timed
     public User add(User user) {
         userRepository.addUser(user);
-        return userRepository.getUserByName(user.getPassportName());
+        return userRepository.getUserByEmail(user.getPassportName());
     }
 
     @GET
@@ -34,4 +31,10 @@ public class UserResource {
         return userRepository.getAllUsers();
     }
 
+    @GET
+    @Path("/{email}")
+    @Timed
+    public User getUserByEmail(@PathParam(value = "email") String email) {
+        return userRepository.getUserByEmail(email);
+    }
 }

@@ -23,12 +23,12 @@ public class InMemoryUserRepository implements UserRepository {
 
     @Override
     public void addUser(User user) {
-        cache.put(user.getPassportName(),  user);
+        cache.put(user.getEmail(), user);
     }
 
     @Override
-    public User getUserByName(String userName) {
-        return cache.get(userName);
+    public User getUserByEmail(String email) {
+        return cache.get(email);
     }
 
     @Override

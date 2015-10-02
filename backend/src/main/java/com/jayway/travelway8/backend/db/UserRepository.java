@@ -6,6 +6,6 @@ import java.util.Collection;
 
 public interface UserRepository {
     void addUser(User user);
-    User getUserByName(String userName);
+    User getUserByEmail(String email);
     Collection<User> getAllUsers();
 }
