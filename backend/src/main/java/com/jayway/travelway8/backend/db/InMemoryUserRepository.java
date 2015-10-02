@@ -23,7 +23,7 @@ public class InMemoryUserRepository implements UserRepository {
 
     @Override
     public void addUser(User user) {
-        cache.put(user.getPassportName(), user);
+        cache.put(user.getPassportName(),  user);
     }
 
     @Override
