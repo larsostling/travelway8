@@ -48,4 +48,10 @@ public class EventImpl implements Event {
 
     }
 
+    @Override
+    public void removeParticipant(User user) {
+        Validate.notNull(user);
+        participants.remove(user);
+    }
+
 }

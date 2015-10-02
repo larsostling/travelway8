@@ -16,4 +16,6 @@ public interface Event {
     Location getLocation();
 
     void setLocation(Location location);
+
+    void removeParticipant(User user);
 }
