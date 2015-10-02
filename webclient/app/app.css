@@ -77,13 +77,33 @@ form > span {
   opacity:1;
 
 }
+
+.support-bubble.large {
+    position: initial;
+    background-image: url(https://dl.dropboxusercontent.com/u/552918/support-bubble.png);
+    background-size:339px 250px;
+    background-repeat:no-repeat;
+    width:339px;
+    height:250px;
+    opacity:1;
+    margin: 0 auto;
+    color:white;
+
+}
+
 .support-bubble > h4 {
   padding-top:15px;
   padding-left:20px;
 }
+.support-bubble.large > h4 {
+    padding-top:45px;
+}
 .support-bubble > div {
   padding-top:0px;
   padding-left: 20px;
+}
+.support-bubble.large > div {
+  width: 310px;
 }
 body {
   background-image: url(https://dl.dropboxusercontent.com/u/552918/toledo.jpg);
