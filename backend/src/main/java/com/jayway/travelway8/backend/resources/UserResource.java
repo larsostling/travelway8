@@ -22,7 +22,7 @@ public class UserResource {
     @Timed
     public User add(User user) {
         userRepository.addUser(user);
-        return userRepository.getUserByEmail(user.getPassportName());
+        return userRepository.getUserByEmail(user.getEmail());
     }
 
     @GET

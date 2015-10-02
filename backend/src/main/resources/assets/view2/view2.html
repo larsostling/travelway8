@@ -24,15 +24,73 @@
 
     <div class="container">
 
-    {{ users }}
+
 
       <div class="starter-template">
         <h1>Passenger list</h1>
-        <p>Pending (5)</p>
-        <p>...</p>
-        <p>Complete (53)</p>
-        <p>...</p>
+
+                       <!-- data.passportName = $scope.passportName;
+      data.passportNr = $scope.passportNr;
+      data.validToDate = $scope.validToDate;
+      data.phone = $scope.phone;
+      data.email = $scope.email;
+      data.citizenship = $scope.citizenship;
+      data.socialSecurityNr = $scope.socialSecurityNr;
+-->
+          <table class="table">
+              <thead>
+                <th>Passport Name</th>
+                <th>Passport #</th>
+                <th>Valid to</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Citizenship</th>
+                <th>Social security#</th>
+                <th>Completed</th>
+              </thead>
+              <tbody>
+              <tr ng-repeat="user in users | filter:isComplete=false">
+                  <td>{{user.passportName}}</td>
+                  <td>{{user.passportNr}}</td>
+                  <td>{{user.validToDate}}</td>
+                  <td>{{user.phone}}</td>
+                  <td>{{user.email}}</td>
+                  <td>{{user.citizenship}}</td>
+                  <td>{{user.socialSecurityNr}}</td>
+                  <td><span class="glyphicon glyphicon-thumbs-down text-fail"></span></td>
+              </tr>
+              <tr ng-repeat="user in users | filter:isComplete=true">
+                  <td>{{user.passportName}}</td>
+                  <td>{{user.passportNr}}</td>
+                  <td>{{user.validToDate}}</td>
+                  <td>{{user.phone}}</td>
+                  <td>{{user.email}}</td>
+                  <td>{{user.citizenship}}</td>
+                  <td>{{user.socialSecurityNr}}</td>
+                  <td><span class="glyphicon glyphicon-thumbs-up text-success"></span></td>
+              </tr>
+              </tbody>
+          </table>
+
+
       </div>
+
+    </div>
+
+    <div class="sidebar">
+      <div class="messages">
+       <ul>
+        <li ng-repeat="message in messages">
+          {{ message }}
+        </li>
+       <ul>
+       {{ messages }}
+      </div>
+      <form name="message" ng-submit="submitMessage()">
+        <input ng-model="editMessage" type="text" placeholder="Message..."/>
+        <input type="submit" class="send" value="Send"/>
+      </form>
+      {{ editMessage }}
 
     </div>
 
