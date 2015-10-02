@@ -9,7 +9,7 @@ angular.module('myApp.view2', ['ngRoute'])
   });
 }])
 
-.controller('View2Ctrl', function($scope, $http) {
+.controller('View2Ctrl', function($scope, $http, $timeout) {
 
   getUsers().then(function(users){
     $scope.users = users;
@@ -17,14 +17,22 @@ angular.module('myApp.view2', ['ngRoute'])
 
   $scope.message = "";
   $scope.messages = [
-    { username: "Fatima", time: new Date(), message: "Hej du" },
+    { username: "Fatima", time: new Date(), message: "Looks like the weather in Toledo will be great, nice." },
   ]
 
   $scope.submitMessage = function(){
     $scope.messages.push({
-      username: "TODO", time: new Date(), message: $scope.editMessage
+      username: "Gabriella", time: new Date(), message: $scope.editMessage
     });
     $scope.editMessage = "";
+
+    $timeout(function(){
+      $scope.typingUser = "Fatima is typing..."
+    }, 3000);
+
+    $timeout(function(){
+      $scope.messages.push({ username: "Fatima", time: new Date(), message: "Glad to here that! :)" });
+    }, 5000);
   }
 
   function getUsers(){

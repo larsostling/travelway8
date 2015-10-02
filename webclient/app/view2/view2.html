@@ -78,6 +78,7 @@
     </div>
 
     <div class="sidebar">
+
       <div class="messages">
        <ul>
         <li ng-repeat="message in messages">
@@ -86,6 +87,7 @@
        <ul>
        {{ messages }}
       </div>
+      <div>{{ typingUser }}</div>
       <form name="message" ng-submit="submitMessage()">
         <input ng-model="editMessage" type="text" placeholder="Message..."/>
         <input type="submit" class="send" value="Send"/>
