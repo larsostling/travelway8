@@ -24,9 +24,12 @@ public class Travel {
         this.name=name;
     }
 
+    public Travel() {
+        name="";
+    }
 
     public void setReturnDate(Date date) {
-        Validate.notNull(date);
+        //Validate.notNull(date);
         this.returnDate = date;
     }
 
@@ -42,7 +45,7 @@ public class Travel {
 
 
     public void setReturnLocation(Location location) {
-        Validate.notNull(location);
+        //Validate.notNull(location);
         this.returnLocation = location;
     }
 
@@ -65,7 +68,7 @@ public class Travel {
 
 
     public void setDepartureDate(Date date) {
-        Validate.notNull(date);
+        //Validate.notNull(date);
         this.departureDate=date;
 
     }
@@ -78,7 +81,7 @@ public class Travel {
 
 
     public void setDepartureLocation(Location location) {
-        Validate.notNull(location);
+        //Validate.notNull(location);
         this.departureLocation=location;
 
     }

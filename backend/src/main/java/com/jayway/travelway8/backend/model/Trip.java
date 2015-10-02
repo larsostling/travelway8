@@ -27,6 +27,9 @@ public class Trip {
         this.name=name;
     }
 
+    public Trip() {
+        name="";
+    }
 
     public String getName(){
         return name;
@@ -44,19 +47,19 @@ public class Trip {
 
 
     public void addParticipant(User user) {
-        Validate.notNull(user);
+        //Validate.notNull(user);
         participants.add(user);
     }
 
 
     public void removeParticipant(User user) {
-        Validate.notNull(user);
+        //Validate.notNull(user);
         participants.remove(user);
     }
 
 
     public void addEvent(Event event) {
-        Validate.notNull(event);
+        //Validate.notNull(event);
         events.add(event);
     }
 
@@ -72,7 +75,7 @@ public class Trip {
 
 
     public void setStartDate(Date date) {
-        Validate.notNull(date);
+        //Validate.notNull(date);
         startDate=date;
     }
 
@@ -83,7 +86,7 @@ public class Trip {
 
 
     public void setEndDate(Date date) {
-        Validate.notNull(date);
+        //Validate.notNull(date);
         endDate=date;
 
     }
@@ -95,13 +98,13 @@ public class Trip {
 
 
     public void setDestination(Location location) {
-        Validate.notNull(location);
+        //Validate.notNull(location);
         this.location=location;
     }
 
 
     public void addTravel(Travel travel) {
-        Validate.notNull(travel);
+        //Validate.notNull(travel);
         travels.add(travel);
 
 
@@ -109,8 +112,8 @@ public class Trip {
 
 
     public void setUserTravel(User user, Travel travel) {
-        Validate.notNull(user);
-        Validate.notNull(travel);
+        //Validate.notNull(user);
+        //Validate.notNull(travel);
         if(!travels.contains(travel)){
             travels.add(travel);
         }

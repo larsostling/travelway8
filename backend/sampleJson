@@ -1,0 +1,10 @@
+[
+{"participants":[],"travelers":{},"name":"Barcelona","startDate":null,"endDate":null,"events":[],"destination":null},
+{"participants":[],"travelers":{},"name":"Toledo","startDate":null,"endDate":null,"events":[],"destination":null}
+]
+
+
+[
+{"passportName":"Nils Nilsson","passportNr":"987654321","validToDate":1443793864150,"phone":"+4687654321","email":"nils.nilsson@travelway.com","citizenship":"Swedish","socialSecurityNr":"8102022222","isComplete":false},
+{"passportName":"Per Persson","passportNr":"123456789","validToDate":1443793864150,"phone":"+4612345678","email":"per.persson@travelway.com","citizenship":"Swedish","socialSecurityNr":"8001011234","isComplete":false}
+]

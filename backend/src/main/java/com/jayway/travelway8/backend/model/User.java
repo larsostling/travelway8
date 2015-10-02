@@ -10,7 +10,7 @@ public class User {
     private String passportNr;
     private Date validToDate;
     private String phone;
-    private String email;
+    private final String email;
     private String citizenship;
     private String socialSecurityNr;
 
@@ -23,8 +23,13 @@ public class User {
         this.email=email;
     }
 
+    public User() {
+        email="";
+    }
+
     public User(String passportName, String passportNr, Date validToDate, String phone, String email,
             String citizenship, String socialSecurityNr) {
+
         this.passportName = passportName;
         this.passportNr = passportNr;
         this.validToDate = validToDate;
@@ -62,11 +67,6 @@ public class User {
 
     public String getEmail() {
         return email;
-    }
-
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
 

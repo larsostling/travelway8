@@ -19,6 +19,9 @@ public class Event {
         this.name=name;
     }
 
+    public Event() {
+        name="";
+    }
 
     public String getName(){
         return name;
@@ -27,7 +30,7 @@ public class Event {
 
 
     public void addParticipant(User user){
-        Validate.notNull(user);
+        //Validate.notNull(user);
         participants.add(user);
     }
 
@@ -43,14 +46,14 @@ public class Event {
 
 
     public void setLocation(Location location) {
-       Validate.notNull(location);
+       //Validate.notNull(location);
         this.location=location;
 
     }
 
 
     public void removeParticipant(User user) {
-        Validate.notNull(user);
+        //Validate.notNull(user);
         participants.remove(user);
     }
 
