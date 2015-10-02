@@ -1,10 +1,15 @@
 package app.travelway.jayway.com.travelwayadmin;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 
 public class MainActivity extends ActionBarActivity implements
@@ -61,7 +66,21 @@ public class MainActivity extends ActionBarActivity implements
         });
     }
 
-//    @Override
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://52.29.24.118/app/#/register/nils.nilsson@travelway.com")));
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    //    @Override
 //    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
 //    }
 //
