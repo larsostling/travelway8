@@ -84,7 +84,7 @@
                     </li>
                     <ul>
             </div>
-            <div class="bubble-right">{{ typingUser }}</div>
+            <div class="bubble-right" ng-show="typingUser">{{ typingUser }}</div>
             <form name="message" ng-submit="submitMessage()">
                 <input ng-model="editMessage" type="text" placeholder="Message..."/>
                 <input type="submit" class="send" value="Send"/>
