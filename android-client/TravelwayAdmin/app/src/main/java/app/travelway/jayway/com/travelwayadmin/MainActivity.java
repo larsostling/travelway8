@@ -75,7 +75,7 @@ public class MainActivity extends ActionBarActivity implements
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://52.29.24.118/app/#/register/nils.nilsson@travelway.com")));
+         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://52.29.24.118/#/register/nils.nilsson@travelway.com")));
 
         return super.onOptionsItemSelected(item);
     }
