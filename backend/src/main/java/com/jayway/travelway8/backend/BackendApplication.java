@@ -1,5 +1,6 @@
 package com.jayway.travelway8.backend;
 
+import com.jayway.travelway8.backend.resources.UserResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
@@ -23,7 +24,6 @@ public class BackendApplication extends Application<BackendConfiguration> {
     @Override
     public void run(final BackendConfiguration configuration,
                     final Environment environment) {
-        // TODO: implement application
+        environment.jersey().register(new UserResource());
     }
-
 }
