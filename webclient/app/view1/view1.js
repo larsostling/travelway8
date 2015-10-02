@@ -9,7 +9,29 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
+
 .controller('View1Ctrl', function($scope, $http) {
+
+   $scope.passportName;
+    $scope.passportNr;
+    $scope.validToDate;
+    $scope.phone;
+    $scope.email;
+    $scope.citizenship;
+    $scope.socialSecurityNr;
+
+   $scope.submit = function($scope){
+        var data = {};
+
+        data.passportName = $scope.passportName;
+        data.passportNr = $scope.passportNr;
+        data.validToDate = $scope.validToDate;
+        data.phone = $scope.phone;
+        data.email = $scope.email;
+        data.citizenship = $scope.citizenship;
+        data.socialSecurityNr = $scope.socialSecurityNr;
+       $scope.createUser(data);
+    }
 
   $scope.createUser = function(user){
 
@@ -34,4 +56,4 @@ angular.module('myApp.view1', ['ngRoute'])
     });
   }
 
-});
+    });
