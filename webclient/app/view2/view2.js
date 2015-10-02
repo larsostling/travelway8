@@ -12,7 +12,29 @@ angular.module('myApp.view2', ['ngRoute'])
 .controller('View2Ctrl', function($scope, $http, $timeout) {
 
   getUsers().then(function(users){
-    $scope.users = users;
+    $scope.users = users.map(function(user){
+
+      if (user.validToDate) {
+
+        var monthNames = [
+          "January", "February", "March",
+          "April", "May", "June", "July",
+          "August", "September", "October",
+          "November", "December"
+        ];
+
+        var date = new Date(user.validToDate)
+
+        var day = date.getDate();
+        var monthIndex = date.getMonth();
+        var year = date.getFullYear();
+
+        console.log(day, monthNames[monthIndex], year);
+        user.validToDate = year + '/' + (monthIndex +1) + '/' + day;
+      }
+
+      return user;
+    });
   });
 
   $scope.message = "";
