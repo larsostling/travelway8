@@ -10,7 +10,7 @@ angular.module('myApp.view1', ['ngRoute'])
 }])
 
 
-.controller('View1Ctrl', function($scope, $http) {
+.controller('View1Ctrl', function($scope, $http, $location) {
 
    $scope.passportName;
     $scope.passportNr;
@@ -20,19 +20,20 @@ angular.module('myApp.view1', ['ngRoute'])
     $scope.citizenship;
     $scope.socialSecurityNr;
 
-   $scope.submit = function($scope){
-        var data = {};
+   $scope.submit = function(){
+      var data = {};
 
-        data.passportName = $scope.passportName;
-        data.passportNr = $scope.passportNr;
-        data.validToDate = $scope.validToDate;
-        data.phone = $scope.phone;
-        data.email = $scope.email;
-        data.citizenship = $scope.citizenship;
-        data.socialSecurityNr = $scope.socialSecurityNr;
-       $scope.createUser(data).then(function(){
-           location.path("/addedUserView");
-       });
+      data.passportName = $scope.passportName;
+      data.passportNr = $scope.passportNr;
+      data.validToDate = $scope.validToDate;
+      data.phone = $scope.phone;
+      data.email = $scope.email;
+      data.citizenship = $scope.citizenship;
+      data.socialSecurityNr = $scope.socialSecurityNr;
+
+      $scope.createUser(data).then(function(){
+        $location.path("/addedUserView");
+      });
     }
 
   $scope.createUser = function(user){
@@ -57,5 +58,4 @@ angular.module('myApp.view1', ['ngRoute'])
       console.log("Fail");
     });
   }
-
-    });
+});
