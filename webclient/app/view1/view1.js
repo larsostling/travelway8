@@ -30,7 +30,9 @@ angular.module('myApp.view1', ['ngRoute'])
         data.email = $scope.email;
         data.citizenship = $scope.citizenship;
         data.socialSecurityNr = $scope.socialSecurityNr;
-       $scope.createUser(data);
+       $scope.createUser(data).then(function(){
+           location.path("/addedUserView");
+       });
     }
 
   $scope.createUser = function(user){
