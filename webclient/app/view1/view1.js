@@ -3,22 +3,30 @@
 angular.module('myApp.view1', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
+  $routeProvider.when('/register/:email?', {
     templateUrl: 'view1/view1.html',
     controller: 'View1Ctrl'
   });
 }])
 
 
-.controller('View1Ctrl', function($scope, $http, $location) {
+.controller('View1Ctrl', function($scope, $http, $location, $routeParams) {
 
-   $scope.passportName;
+
+    $scope.passportName;
     $scope.passportNr;
     $scope.validToDate;
     $scope.phone;
     $scope.email;
     $scope.citizenship;
     $scope.socialSecurityNr;
+
+
+    if ($routeParams.email) {
+      $http.get('http://52.29.24.118/api/user/' + $routeParams.email).then(function(response){
+       angular.extend($scope, response.data);
+      })
+    }
 
    $scope.submit = function(){
       var data = {};

@@ -17,7 +17,7 @@ angular.module('myApp.view2', ['ngRoute'])
 
   $scope.message = "";
   $scope.messages = [
-    { username: "Fatima", time: new Date(), message: "Looks like the weather in Toledo will be great, nice." },
+    { username: "Fatima", time: new Date(), message: "Right now it looks like the weather in Toledo will be really nice." },
   ]
 
   $scope.submitMessage = function(){
@@ -31,8 +31,9 @@ angular.module('myApp.view2', ['ngRoute'])
     }, 3000);
 
     $timeout(function(){
-      $scope.messages.push({ username: "Fatima", time: new Date(), message: "Glad to here that! :)" });
-    }, 5000);
+      $scope.typingUser = "";
+      $scope.messages.push({ username: "Fatima", time: new Date(), message: "Glad to hear that Gabriella! :)" });
+    }, 8000);
   }
 
   function getUsers(){
