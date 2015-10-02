@@ -19,7 +19,7 @@ public class MainActivity extends ActionBarActivity implements
     private TabsPagerAdapter mAdapter;
     private ActionBar actionBar;
     // Tab titles
-    private String[] tabs = { "Upcoming", "People", "Information" };
+    private String[] tabs = { "Upcoming", "People", "Information", "Personal Info"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
