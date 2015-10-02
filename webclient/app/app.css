@@ -94,6 +94,17 @@ form > span {
 
 }
 
+.logo {
+    background-image: url(https://dl.dropboxusercontent.com/u/552918/logo.png);
+    background-repeat: no-repeat;
+    background-size: 164px 62px;
+    width:164px;
+    height:62px;
+    z-index: 10000000;
+    position: absolute;
+    top:0px;
+    right:0px;
+}
 .support-bubble > h4 {
   padding-top:15px;
   padding-left:20px;
