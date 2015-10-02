@@ -78,7 +78,7 @@ public class TravelwayMapFragment extends SupportMapFragment {
 
     private void zoomToMyPos(Location location) {
 
-        if (location != null) {
+        if (location != null && getMap() != null) {
             getMap().animateCamera(CameraUpdateFactory.newLatLngZoom(
                     new LatLng(location.getLatitude(), location.getLongitude()), 13));
 
@@ -93,7 +93,7 @@ public class TravelwayMapFragment extends SupportMapFragment {
             getMap().clear();
             getMap().addMarker(new MarkerOptions()
                     .position(new LatLng(location.getLatitude(), location.getLongitude()))
-                    .title("Hello world"));
+                    .title("You are here!"));
 
         }
 
