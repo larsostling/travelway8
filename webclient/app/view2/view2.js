@@ -9,6 +9,16 @@ angular.module('myApp.view2', ['ngRoute'])
   });
 }])
 
-.controller('View2Ctrl', [function() {
+.controller('View2Ctrl', function($scope, $http) {
 
-}]);
+  getUsers().then(function(users){
+    $scope.users = users;
+  });
+
+  function getUsers(){
+    return $http.get('http://52.29.24.118/user').then(function(response){
+      return response.data;
+      console.log("Load users")
+    });
+  }
+});
