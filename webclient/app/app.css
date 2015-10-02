@@ -66,20 +66,23 @@ form > span {
   margin-left: 15px;
 }
 .support-bubble {
-  position:absolute;
-  background-image: url(https://dl.dropboxusercontent.com/u/552918/support-bubble.png);
-  background-size:248.5px 183px;
-  background-repeat:no-repeat;
-  width:248.5px;
-  height:183px;
-  left:700px;
-  top:200px;
-  opacity:1;
+    position: relative;
+    display: inline-block;
+    background-image: url(https://dl.dropboxusercontent.com/u/552918/support-bubble.png);
+    background-size: 248.5px 183px;
+    background-repeat: no-repeat;
+    width: 248.5px;
+    height: 183px;
+    left: 350px;
+    top: -310px;
+    float: left;
+    opacity: 1;
 
 }
 
 .support-bubble.large {
     position: initial;
+    display:block;
     background-image: url(https://dl.dropboxusercontent.com/u/552918/support-bubble.png);
     background-size:339px 250px;
     background-repeat:no-repeat;
