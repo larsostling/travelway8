@@ -66,20 +66,24 @@ form > span {
   margin-left: 15px;
 }
 .support-bubble {
-  position:absolute;
-  background-image: url(https://dl.dropboxusercontent.com/u/552918/support-bubble.png);
-  background-size:248.5px 183px;
-  background-repeat:no-repeat;
-  width:248.5px;
-  height:183px;
-  left:700px;
-  top:200px;
-  opacity:1;
+    position: relative;
+    display: inline-block;
+    background-image: url(https://dl.dropboxusercontent.com/u/552918/support-bubble.png);
+    background-size: 248.5px 183px;
+    background-repeat: no-repeat;
+    width: 248.5px;
+    height: 183px;
+    left: 350px;
+    top: -310px;
+    float: left;
+    opacity: 1;
 
 }
 
 .support-bubble.large {
     position: initial;
+    display:block;
+    float: inherit;
     background-image: url(https://dl.dropboxusercontent.com/u/552918/support-bubble.png);
     background-size:339px 250px;
     background-repeat:no-repeat;
@@ -91,6 +95,17 @@ form > span {
 
 }
 
+.logo {
+    background-image: url(https://dl.dropboxusercontent.com/u/552918/logo.png);
+    background-repeat: no-repeat;
+    background-size: 164px 62px;
+    width:164px;
+    height:62px;
+    z-index: 10000000;
+    position: absolute;
+    top:0px;
+    right:0px;
+}
 .support-bubble > h4 {
   padding-top:15px;
   padding-left:20px;
@@ -120,4 +135,126 @@ table {
 }
 thead {
     background-color: #d3d3d3;
+}
+
+
+/* Mixins */
+/* Bubbles */
+.bubble-right {
+    max-width: 15%;
+    min-width: 15%;
+    background-color: #dddddd;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    display: inline-block;
+    margin-bottom: 2em;
+    padding: 1em;
+    position: relative;
+}
+.bubble-right:after {
+    border-style: solid;
+    content: "";
+    position: absolute;
+}
+.bubble-right:after {
+    border-color: transparent #dddddd;
+    border-width: 0.75em 1em 0.75em 0;
+    left: -0.96em;
+    /* 1em - prevent distance*/
+    top: 25%;
+}
+.bubble-left {
+    max-width: 15%;
+    min-width: 15%;
+    background-color: #dddddd;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    display: inline-block;
+    margin-bottom: 2em;
+    padding: 1em;
+    position: relative;
+}
+.bubble-left:after {
+    border-style: solid;
+    content: "";
+    position: absolute;
+}
+.bubble-left:after {
+    border-color: transparent #dddddd;
+    border-width: 0.75em 0 0.75em 1em;
+    right: -0.96em;
+    /* 1em - prevent distance*/
+    top: 25%;
+}
+.bubble-top {
+    background-color: #dddddd;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    display: inline-block;
+    margin-bottom: 2em;
+    padding: 1em;
+    position: relative;
+}
+.bubble-top:after {
+    border-style: solid;
+    content: "";
+    position: absolute;
+}
+.bubble-top:after {
+    border-color: #dddddd transparent;
+    border-width: 0 0.75em 1em;
+    left: 25%;
+    top: -0.96em;
+    /* 1em - prevent distance*/
+}
+.bubble-bottom {
+    background-color: #dddddd;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    display: inline-block;
+    margin-bottom: 2em;
+    padding: 1em;
+    position: relative;
+}
+.bubble-bottom:after {
+    border-style: solid;
+    content: "";
+    position: absolute;
+}
+.bubble-bottom:after {
+    border-color: #dddddd transparent;
+    border-width: 1em 0.75em 0;
+    bottom: -0.96em;
+    /* 1em - prevent distance*/
+    left: 25%;
+}
+
+.table {
+    width: 80%;
+    max-width: 80%;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.starter-template {
+    height: 1000px;
+    width: 80%;
+    float: left;
+}
+
+.sidebar form {
+    max-width: 15%;
+    min-width: 15%;
+    float: left;
+    position: relative;
+    left: -30px;
+}
+
+.sidebar {
+    margin-top: 100px;
+
 }

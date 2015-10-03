@@ -9,7 +9,7 @@ angular.module('myApp', [
   'myApp.version'
 ]).
 config(function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.otherwise({redirectTo: '/register'});
 });
 
 window.debug = {};

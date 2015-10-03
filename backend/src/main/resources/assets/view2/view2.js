@@ -9,22 +9,53 @@ angular.module('myApp.view2', ['ngRoute'])
   });
 }])
 
-.controller('View2Ctrl', function($scope, $http) {
+.controller('View2Ctrl', function($scope, $http, $timeout) {
 
   getUsers().then(function(users){
-    $scope.users = users;
+    $scope.users = users.map(function(user){
+
+      if (user.validToDate) {
+
+        var monthNames = [
+          "January", "February", "March",
+          "April", "May", "June", "July",
+          "August", "September", "October",
+          "November", "December"
+        ];
+
+        var date = new Date(user.validToDate)
+
+        var day = date.getDate();
+        var monthIndex = date.getMonth();
+        var year = date.getFullYear();
+
+        console.log(day, monthNames[monthIndex], year);
+        user.validToDate = year + '/' + (monthIndex +1) + '/' + day;
+      }
+
+      return user;
+    });
   });
 
   $scope.message = "";
   $scope.messages = [
-    { username: "Fatima", time: new Date(), message: "Hej du" },
+    { username: "Fatima", time: new Date(), message: "Right now it looks like the weather in Toledo will be really nice." },
   ]
 
   $scope.submitMessage = function(){
     $scope.messages.push({
-      username: "TODO", time: new Date(), message: $scope.editMessage
+      username: "Gabriella", time: new Date(), message: $scope.editMessage
     });
     $scope.editMessage = "";
+
+    $timeout(function(){
+      $scope.typingUser = "Fatima is typing..."
+    }, 3000);
+
+    $timeout(function(){
+      $scope.typingUser = "";
+      $scope.messages.push({ username: "Fatima", time: new Date(), message: "Glad to hear that Gabriella! :)" });
+    }, 8000);
   }
 
   function getUsers(){
